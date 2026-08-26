@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NANA 朝聖地圖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="hero-card">
+          <p class="eyebrow">Punk Pilgrimage Archive</p>
+          <h1>NANA 朝聖地圖</h1>
+          <p class="hero-copy">
+            先從你自己的踩點紀錄長出地圖，不先假裝全收齊。作品場景、回訪動線、照片註記都能慢慢補。
+          </p>
+          <div class="license-strip">
+            <span class="license-chip">CC BY-NC-ND 4.0</span>
+            <span class="license-copy">禁止商用、禁止改作，保留你的蒐集勞動。</span>
+          </div>
+        </div>
+
+        <section class="panel stats-panel">
+          <div class="stats-grid" id="stats"></div>
+        </section>
+
+        <section class="panel control-panel">
+          <label class="field">
+            <span>搜尋</span>
+            <input id="search-input" type="search" placeholder="地點、場景、標籤" />
+          </label>
+
+          <div class="field">
+            <span>顯示</span>
+            <div class="segmented">
+              <button type="button" class="segment is-active" data-filter="all">全部</button>
+              <button type="button" class="segment" data-filter="visited">已去過</button>
+              <button type="button" class="segment" data-filter="wishlist">想去</button>
+            </div>
+          </div>
+
+          <label class="checkbox">
+            <input id="route-toggle" type="checkbox" checked />
+            <span>顯示你的實際朝聖路線</span>
+          </label>
+
+          <div class="button-row">
+            <label class="ghost-button file-button">
+              載入 visits JSON
+              <input id="import-input" type="file" accept="application/json" />
+            </label>
+            <button id="export-button" type="button" class="ghost-button">匯出我的紀錄</button>
+          </div>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="panel-heading">
+            <h2>場景清單</h2>
+            <p id="result-summary">載入中...</p>
+          </div>
+          <div id="location-list" class="location-list"></div>
+        </section>
+
+        <section class="panel license-panel">
+          <h2>授權說明</h2>
+          <p class="hero-copy">
+            本站內容預設採 <strong>CC BY-NC-ND 4.0</strong>。可以轉載分享，但必須標示出處、不得商用、不得改作。
+          </p>
+          <p class="hero-copy">
+            如果有人只是想整包搬走再改名重發，這條就是拿來擋那種爛事的。
+          </p>
+        </section>
+      </aside>
+
+      <main class="map-side">
+        <section class="detail-card" id="detail-card">
+          <p class="detail-empty">點一個地點，右邊會展開你的紀錄和作品註記。</p>
+        </section>
+        <section id="map" class="map-canvas" aria-label="NANA 朝聖地圖"></section>
+      </main>
+    </div>
+
+    <template id="detail-template">
+      <div class="detail-head">
+        <div>
+          <p class="detail-kicker"></p>
+          <h2 class="detail-title"></h2>
+        </div>
+        <span class="detail-badge"></span>
+      </div>
+      <p class="detail-scene"></p>
+      <div class="meta-grid"></div>
+      <div class="visit-editor">
+        <h3>我的紀錄</h3>
+        <label class="field">
+          <span>到訪日期</span>
+          <input class="visit-date" type="date" />
+        </label>
+        <label class="field">
+          <span>評分</span>
+          <select class="visit-rating">
+            <option value="">未填</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+        </label>
+        <label class="checkbox">
+          <input class="visit-visited" type="checkbox" />
+          <span>我已經去過</span>
+        </label>
+        <label class="field">
+          <span>備註</span>
+          <textarea class="visit-notes" rows="4" placeholder="比如：這裡的街角比動畫裡更窄、白天和夜晚氣氛差很多。"></textarea>
+        </label>
+        <label class="field">
+          <span>照片連結（每行一個）</span>
+          <textarea class="visit-photos" rows="3" placeholder="https://..."></textarea>
+        </label>
+        <div class="button-row">
+          <button type="button" class="save-button">儲存到瀏覽器</button>
+          <button type="button" class="reset-button">還原這筆</button>
+        </div>
+      </div>
+    </template>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tokyo-shimokitazawa-livehouse",
+    "title": "下北澤 live house 氛圍點",
+    "area": "Shimokitazawa",
+    "lat": 35.6619,
+    "lng": 139.6689,
+    "scene": "先拿來放你心中最像 Blast / Trapnest 現場感的 live house 或街口。",
+    "reference": "你的實拍 / 你自己確認過的 NANA 聯想點",
+    "address": "下北澤站周邊，可改成精確店名",
+    "note": "這筆是起手式樣板，等你確認真正想收的 live house 再替換。",
+    "tags": ["live house", "Blast", "音樂", "樣板"]
+  },
+  {
+    "id": "tokyo-nakano-apartment-vibe",
+    "title": "707 公寓感街區",
+    "area": "Nakano",
+    "lat": 35.7074,
+    "lng": 139.6653,
+    "scene": "適合放你心中最接近 707 日常感的住宅街、坡道、巷口或樓梯。",
+    "reference": "你的踩點照片 / 自己整理的場景對照",
+    "address": "中野一帶，可改成你自己的精確點位",
+    "note": "不是官方斷言取景點，是給你先掛自己的『就是這個味道』。",
+    "tags": ["707", "日常", "住宅街", "樣板"]
+  },
+  {
+    "id": "tokyo-shibuya-crossing-mood",
+    "title": "涉谷人潮情緒點",
+    "area": "Shibuya",
+    "lat": 35.6595,
+    "lng": 139.7005,
+    "scene": "如果你想收角色情緒、擦肩、東京夜色，這種點會很有 NANA 味。",
+    "reference": "你的旅程印象",
+    "address": "澀谷站前，可改成實際站口或天橋",
+    "note": "這筆偏 moodboard，不一定是作品明確場景，適合保留『感覺點』。",
+    "tags": ["夜景", "人潮", "情緒", "樣板"]
+  },
+  {
+    "id": "tokyo-riverside-walk",
+    "title": "河堤散步場景",
+    "area": "Meguro",
+    "lat": 35.6415,
+    "lng": 139.7157,
+    "scene": "拿來放你覺得很適合 Nana / Hachi 對話感的橋邊、河道、散步線。",
+    "reference": "你的實地筆記",
+    "address": "目黑川周邊，可改成橋名",
+    "note": "很適合之後串成一條半日朝聖步行路線。",
+    "tags": ["散步", "橋", "對話感", "樣板"]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "locationId": "tokyo-shimokitazawa-livehouse",
+    "visited": true,
+    "visitDate": "2026-03-21",
+    "rating": "5",
+    "notes": "這筆只是示範。把它改成你真的去過的 live house、巷口或排隊記憶。",
+    "photos": []
+  },
+  {
+    "locationId": "tokyo-nakano-apartment-vibe",
+    "visited": false,
+    "visitDate": "",
+    "rating": "",
+    "notes": "還沒去，但想挑一天專門走住宅街和樓梯。",
+    "photos": []
+  },
+  {
+    "locationId": "tokyo-shibuya-crossing-mood",
+    "visited": true,
+    "visitDate": "2026-03-22",
+    "rating": "4",
+    "notes": "晚上比較對味，白天太觀光。",
+    "photos": []
+  },
+  {
+    "locationId": "tokyo-riverside-walk",
+    "visited": false,
+    "visitDate": "",
+    "rating": "",
+    "notes": "",
+    "photos": []
+  }
+]
