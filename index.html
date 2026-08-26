@@ -40,7 +40,7 @@
         <section class="panel control-panel">
           <label class="field">
             <span>搜尋</span>
-            <input id="search-input" type="search" placeholder="地點、場景、標籤" />
+            <input id="search-input" type="search" placeholder="地點、場景、地址、媒介" />
           </label>
 
           <div class="field">
@@ -103,22 +103,12 @@
       </div>
       <p class="detail-scene"></p>
       <div class="meta-grid"></div>
+      <div class="source-list"></div>
       <div class="visit-editor">
         <h3>我的紀錄</h3>
         <label class="field">
           <span>到訪日期</span>
           <input class="visit-date" type="date" />
-        </label>
-        <label class="field">
-          <span>評分</span>
-          <select class="visit-rating">
-            <option value="">未填</option>
-            <option value="5">5</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1</option>
-          </select>
         </label>
         <label class="checkbox">
           <input class="visit-visited" type="checkbox" />
@@ -126,12 +116,13 @@
         </label>
         <label class="field">
           <span>備註</span>
-          <textarea class="visit-notes" rows="4" placeholder="比如：這裡的街角比動畫裡更窄、白天和夜晚氣氛差很多。"></textarea>
+          <textarea class="visit-notes" rows="4" placeholder="例如：此點已拆除、我比對到的鏡位在天橋南側、現場招牌已改名。"></textarea>
         </label>
         <label class="field">
-          <span>照片連結（每行一個）</span>
-          <textarea class="visit-photos" rows="3" placeholder="https://..."></textarea>
+          <span>直接上傳照片</span>
+          <input class="visit-photo-upload" type="file" accept="image/*" multiple />
         </label>
+        <div class="photo-list"></div>
         <div class="button-row">
           <button type="button" class="save-button">儲存到瀏覽器</button>
           <button type="button" class="reset-button">還原這筆</button>

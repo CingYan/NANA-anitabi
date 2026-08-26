@@ -1,50 +1,182 @@
 [
   {
-    "id": "tokyo-shimokitazawa-livehouse",
-    "title": "下北澤 live house 氛圍點",
-    "area": "Shimokitazawa",
-    "lat": 35.6619,
-    "lng": 139.6689,
-    "scene": "先拿來放你心中最像 Blast / Trapnest 現場感的 live house 或街口。",
-    "reference": "你的實拍 / 你自己確認過的 NANA 聯想點",
-    "address": "下北澤站周邊，可改成精確店名",
-    "note": "這筆是起手式樣板，等你確認真正想收的 live house 再替換。",
-    "tags": ["live house", "Blast", "音樂", "樣板"]
+    "id": "tokyo-station-marunouchi",
+    "title": "東京站丸之內站舍",
+    "area": "東京・千代田",
+    "lat": 35.6811505,
+    "lng": 139.7659765,
+    "scene": "電影《NANA》裡兩個 Nana 相遇與上京段落的重要現實舞台。",
+    "kind": "實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "全國ロケ地ガイド與 NANA STYLE 都把東京站列為電影開場重點場景。",
+    "address": "東京都千代田區丸之內一丁目 東京站丸之內站舍",
+    "note": "動畫相關二手整理也常把東京站列進舞台清單，但我目前先把它當電影已驗點。",
+    "sources": [
+      {
+        "label": "全國ロケ地ガイド NANA",
+        "url": "https://loca.ash.jp/info/2005/m2005_nana.htm"
+      },
+      {
+        "label": "NANA STYLE 電影ロケ地メモ",
+        "url": "https://fantastic.chu.jp/nanastyle/movie-3.html"
+      }
+    ]
   },
   {
-    "id": "tokyo-nakano-apartment-vibe",
-    "title": "707 公寓感街區",
-    "area": "Nakano",
-    "lat": 35.7074,
-    "lng": 139.6653,
-    "scene": "適合放你心中最接近 707 日常感的住宅街、坡道、巷口或樓梯。",
-    "reference": "你的踩點照片 / 自己整理的場景對照",
-    "address": "中野一帶，可改成你自己的精確點位",
-    "note": "不是官方斷言取景點，是給你先掛自己的『就是這個味道』。",
-    "tags": ["707", "日常", "住宅街", "樣板"]
+    "id": "jackson-hole-chofu",
+    "title": "JACKSON HOLE",
+    "area": "東京・調布",
+    "lat": 35.654872,
+    "lng": 139.5450868,
+    "scene": "作中經典的 JUNK / burger 場景原型，漫畫、動畫、電影與粉絲巡禮資料都會提到。",
+    "kind": "取材原型 / 實景關聯地",
+    "status": "已搬遷",
+    "media": ["漫畫", "動畫", "電影"],
+    "reference": "粉絲站與巡禮整理都指出 JACKSON HOLE 是高頻核心點，但店家已從舊址搬到現址。",
+    "address": "東京都調布市布田一丁目一帶（現址附近）",
+    "note": "舊資料多寫小島町或舊址，近年巡禮文提到 2008 年後已搬遷，所以這筆要保留『已搬遷』。",
+    "sources": [
+      {
+        "label": "NANA STYLE 聖地總覽",
+        "url": "https://fantastic.chu.jp/nanastyle/real.html"
+      },
+      {
+        "label": "旅する亜人ちゃん NANA 聖地",
+        "url": "https://ajin-movie.com/nana-seitijyunrei/"
+      }
+    ]
   },
   {
-    "id": "tokyo-shibuya-crossing-mood",
-    "title": "涉谷人潮情緒點",
-    "area": "Shibuya",
-    "lat": 35.6595,
-    "lng": 139.7005,
-    "scene": "如果你想收角色情緒、擦肩、東京夜色，這種點會很有 NANA 味。",
-    "reference": "你的旅程印象",
-    "address": "澀谷站前，可改成實際站口或天橋",
-    "note": "這筆偏 moodboard，不一定是作品明確場景，適合保留『感覺點』。",
-    "tags": ["夜景", "人潮", "情緒", "樣板"]
+    "id": "koriyama-station",
+    "title": "郡山站",
+    "area": "福島・郡山",
+    "lat": 37.398488,
+    "lng": 140.388798,
+    "scene": "動畫第一話常被認為對應小松奈奈故鄉出發前的車站景。",
+    "kind": "舞台參照地",
+    "status": "現存",
+    "media": ["動畫"],
+    "reference": "近年巡禮整理與多篇粉絲貼文都把第一話開頭站景對到郡山站。",
+    "address": "福島縣郡山市字燧田195",
+    "note": "這筆主要來自動畫巡禮二手彙整，不是官方設定稿明示。",
+    "sources": [
+      {
+        "label": "旅する亜人ちゃん NANA 聖地",
+        "url": "https://ajin-movie.com/nana-seitijyunrei/"
+      }
+    ]
   },
   {
-    "id": "tokyo-riverside-walk",
-    "title": "河堤散步場景",
-    "area": "Meguro",
-    "lat": 35.6415,
-    "lng": 139.7157,
-    "scene": "拿來放你覺得很適合 Nana / Hachi 對話感的橋邊、河道、散步線。",
-    "reference": "你的實地筆記",
-    "address": "目黑川周邊，可改成橋名",
-    "note": "很適合之後串成一條半日朝聖步行路線。",
-    "tags": ["散步", "橋", "對話感", "樣板"]
+    "id": "apartment-noboritoshinmachi",
+    "title": "707 同居公寓外觀原型",
+    "area": "神奈川・川崎",
+    "lat": 35.6245657,
+    "lng": 139.5635201,
+    "scene": "全國ロケ地ガイド把哈七與 Nana 同居的公寓外觀定位在登戶新町一帶。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "這筆是電影版外景定位，不是抽象 mood 地圖。",
+    "address": "神奈川縣川崎市多摩區登戶新町一帶",
+    "note": "來源只給到街區與公寓，沒有門牌；因此地圖先落在街區中心。",
+    "sources": [
+      {
+        "label": "全國ロケ地ガイド NANA",
+        "url": "https://loca.ash.jp/info/2005/m2005_nana.htm"
+      }
+    ]
+  },
+  {
+    "id": "tamasuido-bridge",
+    "title": "多摩水道橋",
+    "area": "東京・狛江",
+    "lat": 35.6251678,
+    "lng": 139.5688588,
+    "scene": "電影裡失戀後的哈七與 Nana 一起回家途中經過的橋。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "全國ロケ地ガイド直接列出這座橋與對應場景。",
+    "address": "東京都狛江市元和泉三丁目 多摩水道橋",
+    "note": "這筆很適合搭配你自己的實拍，因為橋上視角差異很大。",
+    "sources": [
+      {
+        "label": "全國ロケ地ガイド NANA",
+        "url": "https://loca.ash.jp/info/2005/m2005_nana.htm"
+      }
+    ]
+  },
+  {
+    "id": "harmony-hall-zama",
+    "title": "ハーモニーホール座間",
+    "area": "神奈川・座間",
+    "lat": 35.489505,
+    "lng": 139.4073144,
+    "scene": "TRAPNEST 演唱會場景的電影拍攝地。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "多份電影ロケ地整理都把這裡列為 TRAPNEST live 場景。",
+    "address": "神奈川縣座間市緑ケ丘一丁目",
+    "note": "這種場館外觀很可能只對到入場或外景，不是每個內景都在這裡拍。",
+    "sources": [
+      {
+        "label": "全國ロケ地ガイド NANA",
+        "url": "https://loca.ash.jp/info/2005/m2005_nana.htm"
+      },
+      {
+        "label": "NANA STYLE 電影ロケ地メモ",
+        "url": "https://fantastic.chu.jp/nanastyle/movie-3.html"
+      }
+    ]
+  },
+  {
+    "id": "ranshima-station",
+    "title": "蘭島站",
+    "area": "北海道・小樽",
+    "lat": 43.1967293,
+    "lng": 140.8559395,
+    "scene": "電影裡北港站與 Nana、Ren 離別場景的對應車站。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "全國ロケ地ガイド與 NANA STYLE 都直接把北港站對到蘭島站。",
+    "address": "北海道小樽市蘭島一丁目",
+    "note": "地理編碼先落在蘭島站區域；若之後要更精準，可再補月台側拍點。",
+    "sources": [
+      {
+        "label": "全國ロケ地ガイド NANA",
+        "url": "https://loca.ash.jp/info/2005/m2005_nana.htm"
+      },
+      {
+        "label": "NANA STYLE 電影ロケ地メモ",
+        "url": "https://fantastic.chu.jp/nanastyle/movie-3.html"
+      }
+    ]
+  },
+  {
+    "id": "hotel-nikko-narita",
+    "title": "ホテル日航成田",
+    "area": "千葉・成田",
+    "lat": 35.783992,
+    "lng": 140.3793906,
+    "scene": "電影裡 Nana 與 Ren 重逢的飯店。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "NANA STYLE 與全國ロケ地ガイド都有列這間飯店。",
+    "address": "千葉縣成田市取香500",
+    "note": "偏功能性場景，但對電影派很重要。",
+    "sources": [
+      {
+        "label": "全國ロケ地ガイド NANA",
+        "url": "https://loca.ash.jp/info/2005/m2005_nana.htm"
+      },
+      {
+        "label": "NANA STYLE 電影ロケ地メモ",
+        "url": "https://fantastic.chu.jp/nanastyle/movie-3.html"
+      }
+    ]
   }
 ]

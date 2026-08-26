@@ -1,33 +1,57 @@
 [
   {
-    "locationId": "tokyo-shimokitazawa-livehouse",
-    "visited": true,
-    "visitDate": "2026-03-21",
-    "rating": "5",
-    "notes": "這筆只是示範。把它改成你真的去過的 live house、巷口或排隊記憶。",
-    "photos": []
-  },
-  {
-    "locationId": "tokyo-nakano-apartment-vibe",
+    "locationId": "tokyo-station-marunouchi",
     "visited": false,
     "visitDate": "",
-    "rating": "",
-    "notes": "還沒去，但想挑一天專門走住宅街和樓梯。",
+    "notes": "",
     "photos": []
   },
   {
-    "locationId": "tokyo-shibuya-crossing-mood",
-    "visited": true,
-    "visitDate": "2026-03-22",
-    "rating": "4",
-    "notes": "晚上比較對味，白天太觀光。",
-    "photos": []
-  },
-  {
-    "locationId": "tokyo-riverside-walk",
+    "locationId": "jackson-hole-chofu",
     "visited": false,
     "visitDate": "",
-    "rating": "",
+    "notes": "",
+    "photos": []
+  },
+  {
+    "locationId": "koriyama-station",
+    "visited": false,
+    "visitDate": "",
+    "notes": "",
+    "photos": []
+  },
+  {
+    "locationId": "apartment-noboritoshinmachi",
+    "visited": false,
+    "visitDate": "",
+    "notes": "",
+    "photos": []
+  },
+  {
+    "locationId": "tamasuido-bridge",
+    "visited": false,
+    "visitDate": "",
+    "notes": "",
+    "photos": []
+  },
+  {
+    "locationId": "harmony-hall-zama",
+    "visited": false,
+    "visitDate": "",
+    "notes": "",
+    "photos": []
+  },
+  {
+    "locationId": "ranshima-station",
+    "visited": false,
+    "visitDate": "",
+    "notes": "",
+    "photos": []
+  },
+  {
+    "locationId": "hotel-nikko-narita",
+    "visited": false,
+    "visitDate": "",
     "notes": "",
     "photos": []
   }
