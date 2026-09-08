@@ -42,7 +42,7 @@ function render() {
   ui.stats.innerHTML = `<strong>${locations.length}</strong><span>全部場景</span><strong>${records.length}</strong><span>目前顯示</span>`;
   renderList(records);
   renderMap(records);
-  if (!records.some((item) => item.id === selectedId)) selectedId = records[0]?.id || null;
+  if (selectedId !== null && !records.some((item) => item.id === selectedId)) selectedId = null;
   renderDetail(locations.find((item) => item.id === selectedId));
 }
 
