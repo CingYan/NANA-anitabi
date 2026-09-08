@@ -6,156 +6,63 @@
     <title>NANA 朝聖地圖</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="./preview/styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <aside class="sidebar">
-        <div class="hero-card">
-          <p class="eyebrow">Punk Pilgrimage Archive</p>
-          <h1>NANA 朝聖地圖</h1>
-          <p class="hero-copy">
-            先從你自己的踩點紀錄長出地圖，不先假裝全收齊。作品場景、回訪動線、照片註記都能慢慢補。
-          </p>
-          <div class="license-strip">
-            <span class="license-chip">CC BY-NC-ND 4.0</span>
-            <span class="license-copy">禁止商用、禁止改作，保留你的蒐集勞動。</span>
-          </div>
+    <main class="preview-shell">
+      <aside class="control-panel">
+        <p class="eyebrow">NANA PILGRIMAGE MAP</p>
+        <h1>NANA 朝聖地圖</h1>
+        <p class="intro">以地圖為主體，整理漫畫、動畫與電影中的 NANA 場景。</p>
+        <label class="field"><span>搜尋場景</span><input id="search" type="search" placeholder="地點、地址、場景說明" /></label>
+        <label class="field"><span>地區</span><select id="area-filter"><option value="all">全部地區</option></select></label>
+        <label class="field"><span>媒介</span><select id="media-filter"><option value="all">全部媒介</option></select></label>
+        <label class="field"><span>狀態</span><select id="status-filter"><option value="all">全部狀態</option></select></label>
+        <div class="stats" id="stats"></div>
+        <div class="editor-toolbar">
+          <button id="edit-mode" type="button">編輯模式：關閉</button>
+          <button id="add-location" type="button">新增地點</button>
+          <button id="export-locations" type="button">匯出資料</button>
         </div>
-
-        <section class="panel stats-panel">
-          <div class="stats-grid" id="stats"></div>
-        </section>
-
-        <section class="panel control-panel">
-          <label class="field">
-            <span>搜尋</span>
-            <input id="search-input" type="search" placeholder="地點、場景、地址、媒介" />
-          </label>
-
-          <div class="field">
-            <span>顯示</span>
-            <div class="segmented">
-              <button type="button" class="segment is-active" data-filter="all">全部</button>
-              <button type="button" class="segment" data-filter="visited">已去過</button>
-              <button type="button" class="segment" data-filter="wishlist">想去</button>
-            </div>
-          </div>
-
-          <label class="checkbox">
-            <input id="route-toggle" type="checkbox" checked />
-            <span>顯示你的實際朝聖路線</span>
-          </label>
-
-          <div class="button-row">
-            <label class="ghost-button file-button">
-              載入 visits JSON
-              <input id="import-input" type="file" accept="application/json" />
-            </label>
-            <button id="export-button" type="button" class="ghost-button">匯出我的紀錄</button>
-          </div>
-        </section>
-
-        <section class="panel list-panel">
-          <div class="panel-heading">
-            <h2>場景清單</h2>
-            <p id="result-summary">載入中...</p>
-          </div>
-          <div id="location-list" class="location-list"></div>
-        </section>
-
-        <section class="panel license-panel">
-          <h2>授權說明</h2>
-          <p class="hero-copy">
-            本站內容預設採 <strong>CC BY-NC-ND 4.0</strong>。可以轉載分享，但必須標示出處、不得商用、不得改作。
-          </p>
-          <p class="hero-copy">
-            如果有人只是想整包搬走再改名重發，這條就是拿來擋那種爛事的。
-          </p>
-        </section>
+        <p class="editor-status" id="editor-status">目前為唯讀瀏覽模式。</p>
+        <div class="list-heading"><h2>場景清單</h2><span id="count"></span></div>
+        <div id="location-list" class="location-list"></div>
       </aside>
-
-      <main class="map-side">
-        <section class="detail-card" id="detail-card">
-          <p class="detail-empty">點一個地點，右邊會展開你的紀錄和作品註記。</p>
+      <section class="map-panel">
+        <div id="map" aria-label="NANA 朝聖地圖"></div>
+        <section id="detail" class="detail-panel is-hidden" aria-live="polite"></section>
+      </section>
+    </main>
+    <dialog id="location-editor" class="editor-dialog">
+      <form method="dialog" id="location-form">
+        <div class="dialog-head"><h2 id="editor-title">編輯地點</h2><button class="close-dialog" value="cancel" type="submit">×</button></div>
+        <div class="form-grid">
+          <label><span>ID</span><input name="id" required /></label>
+          <label><span>標題</span><input name="title" required /></label>
+          <label><span>區域</span><input name="area" /></label>
+          <label><span>地點類型</span><input name="kind" /></label>
+          <label><span>狀態</span><input name="status" /></label>
+          <label><span>媒介（逗號分隔）</span><input name="media" /></label>
+          <label><span>緯度</span><input name="lat" type="number" step="any" required /></label>
+          <label><span>經度</span><input name="lng" type="number" step="any" required /></label>
+          <label class="wide"><span>場景說明</span><textarea name="scene" rows="3"></textarea></label>
+          <label class="wide"><span>地址</span><input name="address" /></label>
+          <label class="wide"><span>來源說明</span><textarea name="reference" rows="3"></textarea></label>
+          <label class="wide"><span>補充</span><textarea name="note" rows="3"></textarea></label>
+          <label class="wide"><span>來源連結（每行：名稱 | 網址）</span><textarea name="sources" rows="3" placeholder="名稱 | https://example.com"></textarea></label>
+        </div>
+        <section class="image-editor">
+          <div class="image-editor-head"><h3>作品畫面</h3><label class="upload-button">新增圖片<input id="reference-upload" type="file" accept="image/*" multiple /></label></div>
+          <div id="reference-images" class="image-editor-list"></div>
+          <div class="image-editor-head"><h3>現地照片</h3><label class="upload-button">新增圖片<input id="real-upload" type="file" accept="image/*" multiple /></label></div>
+          <div id="real-images" class="image-editor-list"></div>
         </section>
-        <section id="map" class="map-canvas" aria-label="NANA 朝聖地圖"></section>
-      </main>
-    </div>
-
-    <template id="detail-template">
-      <div class="detail-head">
-        <div>
-          <p class="detail-kicker"></p>
-          <h2 class="detail-title"></h2>
-        </div>
-        <div class="detail-actions">
-          <span class="detail-badge"></span>
-          <button type="button" class="ghost-button edit-location-button">編輯地點資料</button>
-        </div>
-      </div>
-      <p class="detail-scene"></p>
-      <div class="meta-grid"></div>
-      <div class="source-list"></div>
-      <form class="location-editor" hidden>
-        <h3>編輯地點資料</h3>
-        <label class="field"><span>區域</span><input class="location-area-input" type="text" /></label>
-        <label class="field"><span>標題</span><input class="location-title-input" type="text" /></label>
-        <label class="field"><span>場景說明</span><textarea class="location-scene-input" rows="3"></textarea></label>
-        <label class="field"><span>媒介（用逗號分隔）</span><input class="location-media-input" type="text" /></label>
-        <label class="field"><span>地點類型</span><input class="location-kind-input" type="text" /></label>
-        <label class="field"><span>地址</span><input class="location-address-input" type="text" /></label>
-        <label class="field"><span>存續狀態</span><input class="location-status-input" type="text" /></label>
-        <label class="field"><span>來源說明</span><textarea class="location-reference-input" rows="3"></textarea></label>
-        <label class="field"><span>補充</span><textarea class="location-note-input" rows="3"></textarea></label>
-        <label class="field"><span>來源連結（每行：標籤 | URL）</span><textarea class="location-sources-input" rows="4"></textarea></label>
-        <div class="button-row">
-          <button type="submit" class="save-button location-save-button">儲存地點資料</button>
-          <button type="button" class="reset-button location-reset-button">還原原始資料</button>
-        </div>
-        <p class="editor-hint">資料會儲存在目前瀏覽器；要同步到網站檔案，請匯出後更新 locations.json。</p>
+        <div class="dialog-actions"><button value="cancel" type="submit" class="secondary">取消</button><button id="save-location" value="default" type="submit" class="primary">儲存地點</button></div>
       </form>
-      <div class="visit-editor">
-        <h3>我的紀錄</h3>
-        <label class="field">
-          <span>到訪日期</span>
-          <input class="visit-date" type="date" />
-        </label>
-        <label class="checkbox">
-          <input class="visit-visited" type="checkbox" />
-          <span>我已經去過</span>
-        </label>
-        <label class="field">
-          <span>備註</span>
-          <textarea class="visit-notes" rows="4" placeholder="例如：此點已拆除、我比對到的鏡位在天橋南側、現場招牌已改名。"></textarea>
-        </label>
-        <label class="field">
-          <span>直接上傳照片</span>
-          <input class="visit-photo-upload" type="file" accept="image/*" multiple />
-        </label>
-        <div class="photo-list"></div>
-        <div class="button-row">
-          <button type="button" class="save-button">儲存到瀏覽器</button>
-          <button type="button" class="reset-button">還原這筆</button>
-        </div>
-      </div>
-    </template>
-
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
-    <script type="module" src="./app.js"></script>
+    </dialog>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script type="module" src="./preview/app.js"></script>
   </body>
 </html>

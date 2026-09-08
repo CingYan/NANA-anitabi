@@ -23,6 +23,12 @@
         <label class="field"><span>狀態</span><select id="status-filter"><option value="all">全部狀態</option></select></label>
 
         <div class="stats" id="stats"></div>
+        <div class="editor-toolbar">
+          <button id="edit-mode" type="button">編輯模式：關閉</button>
+          <button id="add-location" type="button">新增地點</button>
+          <button id="export-locations" type="button">匯出資料</button>
+        </div>
+        <p class="editor-status" id="editor-status">目前為唯讀瀏覽模式。</p>
         <div class="list-heading"><h2>場景清單</h2><span id="count"></span></div>
         <div id="location-list" class="location-list"></div>
       </aside>
@@ -32,6 +38,34 @@
         <section id="detail" class="detail-panel is-hidden" aria-live="polite"></section>
       </section>
     </main>
+
+    <dialog id="location-editor" class="editor-dialog">
+      <form method="dialog" id="location-form">
+        <div class="dialog-head"><h2 id="editor-title">編輯地點</h2><button class="close-dialog" value="cancel" type="submit">×</button></div>
+        <div class="form-grid">
+          <label><span>ID</span><input name="id" required /></label>
+          <label><span>標題</span><input name="title" required /></label>
+          <label><span>區域</span><input name="area" /></label>
+          <label><span>地點類型</span><input name="kind" /></label>
+          <label><span>狀態</span><input name="status" /></label>
+          <label><span>媒介（逗號分隔）</span><input name="media" /></label>
+          <label><span>緯度</span><input name="lat" type="number" step="any" required /></label>
+          <label><span>經度</span><input name="lng" type="number" step="any" required /></label>
+          <label class="wide"><span>場景說明</span><textarea name="scene" rows="3"></textarea></label>
+          <label class="wide"><span>地址</span><input name="address" /></label>
+          <label class="wide"><span>來源說明</span><textarea name="reference" rows="3"></textarea></label>
+          <label class="wide"><span>補充</span><textarea name="note" rows="3"></textarea></label>
+          <label class="wide"><span>來源連結（每行：名稱 | 網址）</span><textarea name="sources" rows="3" placeholder="全國ロケ地ガイド NANA | https://example.com"></textarea></label>
+        </div>
+        <section class="image-editor">
+          <div class="image-editor-head"><h3>作品畫面</h3><label class="upload-button">新增圖片<input id="reference-upload" type="file" accept="image/*" multiple /></label></div>
+          <div id="reference-images" class="image-editor-list"></div>
+          <div class="image-editor-head"><h3>現地照片</h3><label class="upload-button">新增圖片<input id="real-upload" type="file" accept="image/*" multiple /></label></div>
+          <div id="real-images" class="image-editor-list"></div>
+        </section>
+        <div class="dialog-actions"><button value="cancel" type="submit" class="secondary">取消</button><button id="save-location" value="default" type="submit" class="primary">儲存地點</button></div>
+      </form>
+    </dialog>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script type="module" src="./app.js"></script>
