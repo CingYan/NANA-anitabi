@@ -25,6 +25,7 @@ const ui = {
 };
 
 const LOCAL_STORAGE_KEY = "nana-pilgrimage-map.visits.v2";
+const LOCAL_LOCATIONS_KEY = "nana-pilgrimage-map.locations.v1";
 const markerLayer = L.layerGroup().addTo(map);
 
 let routeLayer = null;
@@ -32,6 +33,7 @@ let state = {
   filter: "all",
   search: "",
   locations: [],
+  baseLocations: [],
   visits: {},
   selectedId: null,
 };
@@ -46,7 +48,8 @@ async function init() {
     fetchJson("./data/visits.json"),
   ]);
 
-  state.locations = locations;
+  state.baseLocations = locations;
+  state.locations = mergeLocationOverrides(locations, readLocalLocations());
   state.visits = mergeVisits(indexVisitsById(seedVisits), readLocalVisits());
 
   bindEvents();
@@ -283,6 +286,67 @@ function renderDetail(record) {
   fragment.querySelector(".detail-badge").textContent = location.status;
   fragment.querySelector(".detail-scene").textContent = location.scene;
 
+  const editor = fragment.querySelector(".location-editor");
+  const fillLocationEditor = () => {
+    fragment.querySelector(".location-area-input").value = location.area || "";
+    fragment.querySelector(".location-title-input").value = location.title || "";
+    fragment.querySelector(".location-scene-input").value = location.scene || "";
+    fragment.querySelector(".location-media-input").value = (location.media || []).join(", ");
+    fragment.querySelector(".location-kind-input").value = location.kind || "";
+    fragment.querySelector(".location-address-input").value = location.address || "";
+    fragment.querySelector(".location-status-input").value = location.status || "";
+    fragment.querySelector(".location-reference-input").value = location.reference || "";
+    fragment.querySelector(".location-note-input").value = location.note || "";
+    fragment.querySelector(".location-sources-input").value = (location.sources || [])
+      .map((source) => `${source.label} | ${source.url}`)
+      .join("\n");
+  };
+
+  fragment.querySelector(".edit-location-button").addEventListener("click", () => {
+    fillLocationEditor();
+    editor.hidden = !editor.hidden;
+  });
+
+  editor.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const sources = fragment.querySelector(".location-sources-input").value
+      .split("\n")
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((line) => {
+        const separator = line.indexOf("|");
+        return separator < 0
+          ? { label: line, url: line }
+          : { label: line.slice(0, separator).trim(), url: line.slice(separator + 1).trim() };
+      });
+
+    const updated = {
+      ...location,
+      area: fragment.querySelector(".location-area-input").value.trim(),
+      title: fragment.querySelector(".location-title-input").value.trim(),
+      scene: fragment.querySelector(".location-scene-input").value.trim(),
+      media: fragment.querySelector(".location-media-input").value.split(",").map((item) => item.trim()).filter(Boolean),
+      kind: fragment.querySelector(".location-kind-input").value.trim(),
+      address: fragment.querySelector(".location-address-input").value.trim(),
+      status: fragment.querySelector(".location-status-input").value.trim(),
+      reference: fragment.querySelector(".location-reference-input").value.trim(),
+      note: fragment.querySelector(".location-note-input").value.trim(),
+      sources,
+    };
+
+    state.locations = state.locations.map((item) => item.id === location.id ? updated : item);
+    persistLocations();
+    render();
+  });
+
+  fragment.querySelector(".location-reset-button").addEventListener("click", () => {
+    const original = state.baseLocations.find((item) => item.id === location.id);
+    if (!original) return;
+    state.locations = state.locations.map((item) => item.id === location.id ? structuredClone(original) : item);
+    persistLocations();
+    render();
+  });
+
   const metadata = [
     ["媒介", location.media.join(" / ")],
     ["地點類型", location.kind],
@@ -465,6 +529,28 @@ async function importVisits(event) {
 
 function persistVisits() {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state.visits));
+}
+
+function persistLocations() {
+  const baseById = Object.fromEntries(state.baseLocations.map((location) => [location.id, location]));
+  const overrides = Object.fromEntries(
+    state.locations
+      .filter((location) => JSON.stringify(location) !== JSON.stringify(baseById[location.id]))
+      .map((location) => [location.id, location]),
+  );
+  localStorage.setItem(LOCAL_LOCATIONS_KEY, JSON.stringify(overrides));
+}
+
+function readLocalLocations() {
+  try {
+    return JSON.parse(localStorage.getItem(LOCAL_LOCATIONS_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function mergeLocationOverrides(locations, overrides) {
+  return locations.map((location) => ({ ...location, ...(overrides[location.id] || {}) }));
 }
 
 function readLocalVisits() {

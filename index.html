@@ -99,11 +99,32 @@
           <p class="detail-kicker"></p>
           <h2 class="detail-title"></h2>
         </div>
-        <span class="detail-badge"></span>
+        <div class="detail-actions">
+          <span class="detail-badge"></span>
+          <button type="button" class="ghost-button edit-location-button">編輯地點資料</button>
+        </div>
       </div>
       <p class="detail-scene"></p>
       <div class="meta-grid"></div>
       <div class="source-list"></div>
+      <form class="location-editor" hidden>
+        <h3>編輯地點資料</h3>
+        <label class="field"><span>區域</span><input class="location-area-input" type="text" /></label>
+        <label class="field"><span>標題</span><input class="location-title-input" type="text" /></label>
+        <label class="field"><span>場景說明</span><textarea class="location-scene-input" rows="3"></textarea></label>
+        <label class="field"><span>媒介（用逗號分隔）</span><input class="location-media-input" type="text" /></label>
+        <label class="field"><span>地點類型</span><input class="location-kind-input" type="text" /></label>
+        <label class="field"><span>地址</span><input class="location-address-input" type="text" /></label>
+        <label class="field"><span>存續狀態</span><input class="location-status-input" type="text" /></label>
+        <label class="field"><span>來源說明</span><textarea class="location-reference-input" rows="3"></textarea></label>
+        <label class="field"><span>補充</span><textarea class="location-note-input" rows="3"></textarea></label>
+        <label class="field"><span>來源連結（每行：標籤 | URL）</span><textarea class="location-sources-input" rows="4"></textarea></label>
+        <div class="button-row">
+          <button type="submit" class="save-button location-save-button">儲存地點資料</button>
+          <button type="button" class="reset-button location-reset-button">還原原始資料</button>
+        </div>
+        <p class="editor-hint">資料會儲存在目前瀏覽器；要同步到網站檔案，請匯出後更新 locations.json。</p>
+      </form>
       <div class="visit-editor">
         <h3>我的紀錄</h3>
         <label class="field">
