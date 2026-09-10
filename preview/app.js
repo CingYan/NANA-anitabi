@@ -130,6 +130,7 @@ function renderDetail(location) {
     <div class="meta"><span>${escapeHtml((location.media || []).join(" / "))}</span><span>${escapeHtml(location.kind || "")}</span><span>${escapeHtml(location.address || "地址未填")}</span></div>
     <div class="comparison"><div><h3>作品畫面</h3>${reference || emptyImage("尚未提供作品畫面")}</div><div><h3>現地照片</h3>${real || emptyImage("尚未提供現地照片")}</div></div>
     <p class="source-note">${escapeHtml(location.reference || "尚未填寫來源說明")}</p>
+    ${renderResearch(location.research)}
     <div class="links">${(location.sources || []).map((source) => `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)}</a>`).join("")}</div>
   `;
   ui.detail.querySelector(".edit-detail").addEventListener("click", () => openEditor(location));
@@ -137,10 +138,20 @@ function renderDetail(location) {
 }
 
 function imageCard(label, image) {
-  return `<figure class="image-card"><img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(image.caption || label)}" /><figcaption>${escapeHtml(image.caption || label)}</figcaption></figure>`;
+  return `<figure class="image-card"><img src="${escapeAttribute(assetPath(image.src))}" alt="${escapeAttribute(image.caption || label)}" /><figcaption>${escapeHtml(image.caption || label)}</figcaption></figure>`;
 }
 
 function emptyImage(text) { return `<div class="empty-image">${escapeHtml(text)}</div>`; }
+function assetPath(src) {
+  if (!src || /^(data:|https?:|blob:|\/)/.test(src)) return src;
+  return window.location.pathname.includes("/preview/") ? `../${src.replace(/^\.\//, "")}` : `./${src.replace(/^\.\//, "")}`;
+}
+function renderResearch(research) {
+  if (!research) return "";
+  const steps = (research.steps || []).map((step) => `<li><time>${escapeHtml(step.date || "")}</time><strong>${escapeHtml(step.action || "")}</strong><span>${escapeHtml(step.note || "")}</span></li>`).join("");
+  const sources = (research.sources || []).map((source) => `<li><a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label || source.title || source.url)}</a>${source.note ? `<span>${escapeHtml(source.note)}</span>` : ""}</li>`).join("");
+  return `<details class="research-log"><summary>查看研究脈絡${research.status ? ` · ${escapeHtml(research.status)}` : ""}</summary><p>${escapeHtml(research.summary || "")}</p>${steps ? `<h3>尋找過程</h3><ol>${steps}</ol>` : ""}${sources ? `<h3>參考資料</h3><ul>${sources}</ul>` : ""}</details>`;
+}
 function select(id) { selectedId = id; const location = locations.find((item) => item.id === id); if (location) map.flyTo([location.lat, location.lng], 14, { duration: 0.5 }); render(); }
 function fillSelect(selectElement, values) { selectElement.insertAdjacentHTML("beforeend", values.map((value) => `<option value="${escapeAttribute(value)}">${escapeHtml(value)}</option>`).join("")); }
 function unique(values) { return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "zh-Hant")); }
@@ -193,7 +204,7 @@ function renderDraftImages() {
   ["reference", "real"].forEach((type) => {
     const container = type === "reference" ? ui.referenceImages : ui.realImages;
     container.innerHTML = draftImages[type].length ? draftImages[type].map((image, index) => `
-      <article class="draft-image"><img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(image.caption || type)}" /><input data-image-caption="${type}" data-index="${index}" value="${escapeAttribute(image.caption || "")}" placeholder="圖片說明" /><div><button type="button" data-image-move="up" data-type="${type}" data-index="${index}">↑</button><button type="button" data-image-move="down" data-type="${type}" data-index="${index}">↓</button><button type="button" data-image-remove="${type}" data-index="${index}">刪除</button></div></article>
+      <article class="draft-image"><img src="${escapeAttribute(assetPath(image.src))}" alt="${escapeAttribute(image.caption || type)}" /><input data-image-caption="${type}" data-index="${index}" value="${escapeAttribute(image.caption || "")}" placeholder="圖片說明" /><div><button type="button" data-image-move="up" data-type="${type}" data-index="${index}">↑</button><button type="button" data-image-move="down" data-type="${type}" data-index="${index}">↓</button><button type="button" data-image-remove="${type}" data-index="${index}">刪除</button></div></article>
     `).join("") : '<p class="empty">尚未加入圖片。</p>';
   });
   ui.form.querySelectorAll("[data-image-caption]").forEach((input) => input.addEventListener("input", () => { draftImages[input.dataset.imageCaption][Number(input.dataset.index)].caption = input.value; }));

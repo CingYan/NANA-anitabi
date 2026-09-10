@@ -36,3 +36,13 @@ textarea { width: 100%; resize: vertical; padding: 11px 12px; border: 1px solid 
 .image-editor { display: grid; gap: 10px; margin-top: 20px; }.image-editor h3 { margin: 0; color: var(--gold); font-size: 1rem; }.upload-button { position: relative; overflow: hidden; padding: 7px 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--text); font-size: .78rem; cursor: pointer; }.upload-button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
 .image-editor-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 12px; }.draft-image { display: grid; gap: 6px; padding: 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(0,0,0,.18); }.draft-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 7px; }.draft-image input { padding: 7px; font-size: .78rem; }.draft-image div { display: flex; gap: 4px; }.draft-image button { flex: 1; padding: 5px; font-size: .72rem; }.dialog-actions { justify-content: flex-end; margin-top: 20px; }.primary { border-color: var(--accent); background: var(--accent); color: #1d100d; font-weight: 900; }.secondary { background: transparent; }
 @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; }.form-grid .wide { grid-column: auto; }.editor-dialog form { padding: 16px; } }
+
+.research-log { margin-top: 1rem; padding: .8rem .95rem; border: 1px solid rgba(255,207,138,.22); border-radius: 12px; background: rgba(18,17,25,.72); }
+.research-log summary { cursor: pointer; color: var(--gold); font-weight: 700; }
+.research-log h3 { margin: 1rem 0 .45rem; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
+.research-log ol, .research-log ul { display: grid; gap: .55rem; margin: 0; padding-left: 1.2rem; }
+.research-log li { color: #d7d0c9; }
+.research-log li time, .research-log li strong, .research-log li span { display: block; }
+.research-log li time { color: #a79b91; font-size: .76rem; }
+.research-log li strong { color: #f5e8d8; }
+.research-log a { color: #ffcf8a; }

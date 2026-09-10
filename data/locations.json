@@ -178,5 +178,70 @@
         "url": "https://fantastic.chu.jp/nanastyle/movie-3.html"
       }
     ]
+  },
+  {
+    "id": "otaru-hanazono-izakaya-route",
+    "title": "小樽花園一丁目・居酒屋後的小巷",
+    "area": "北海道・小樽",
+    "lat": 43.191886266854226,
+    "lng": 140.99961796932868,
+    "scene": "電影第一集離開居酒屋後，角色走過的雪巷與花園一丁目街區。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "已依電影畫面中的招牌、建築、道路配置與周邊環境比對，確認位置位於小樽市花園一丁目。",
+    "address": "1 Chome-11-17 Hanazono, Otaru, Hokkaido 047-0024, Japan",
+    "note": "本筆座標為已確認的現場位置；目前收到的附件包含電影畫面截圖，現地手持截圖與比對照片附件尚未成功讀取。",
+    "images": {
+      "reference": [
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/film-01.png",
+          "caption": "電影畫面：離開居酒屋後走入雪巷"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/film-02.png",
+          "caption": "電影畫面：巷道與招牌對照"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/film-03.jpg",
+          "caption": "電影畫面：街區環境對照"
+        }
+      ],
+      "real": []
+    },
+    "research": {
+      "status": "已確認",
+      "confirmedAt": "2026-09-10",
+      "summary": "先由電影畫面中的招牌尋找候選位置，再比對建築、招牌與周邊環境，確認為小樽市花園一丁目的此處。",
+      "steps": [
+        {
+          "date": "2026-09-10",
+          "action": "查閱參考資料",
+          "note": "由兩個 NANA 電影取景整理網站得知大約位置在小樽市花園一丁目。"
+        },
+        {
+          "date": "2026-09-10",
+          "action": "招牌比對",
+          "note": "以電影截圖中的店家招牌與街道線索搜尋候選位置。"
+        },
+        {
+          "date": "2026-09-10",
+          "action": "現地確認",
+          "note": "比對建築、招牌與周邊環境後，確認目前座標與電影畫面相符。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "全國ロケ地ガイド NANA",
+          "url": "https://loca.ash.jp/info/2005/m2005_nana.htm",
+          "note": "提供小樽花園一丁目的大致取景位置線索。"
+        },
+        {
+          "label": "NANA 小樽取景整理",
+          "url": "https://ameblo.jp/jinjingtr/entry-11242726384.html",
+          "note": "提供小樽市花園一丁目的相關取景線索。"
+        }
+      ]
+    }
   }
 ]
