@@ -191,7 +191,7 @@
     "media": ["電影"],
     "reference": "已依電影畫面中的招牌、建築、道路配置與周邊環境比對，確認位置位於小樽市花園一丁目。",
     "address": "1 Chome-11-17 Hanazono, Otaru, Hokkaido 047-0024, Japan",
-    "note": "本筆座標為已確認的現場位置；目前收到的附件包含電影畫面截圖，現地手持截圖與比對照片附件尚未成功讀取。",
+    "note": "本筆座標為已確認的現場位置；已補入現地手持電影畫面與街區環境比對照片。",
     "images": {
       "reference": [
         {
@@ -207,7 +207,12 @@
           "caption": "電影畫面：街區環境對照"
         }
       ],
-      "real": []
+      "real": [
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-comparison-01.jpg",
+          "caption": "現地比對：手持電影畫面與小樽花園一丁目街區"
+        }
+      ]
     },
     "research": {
       "status": "已確認",
