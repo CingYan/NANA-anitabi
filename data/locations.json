@@ -211,9 +211,55 @@
         {
           "src": "images/nana/otaru-hanazono-izakaya-route/site-comparison-01.jpg",
           "caption": "現地比對：手持電影畫面與小樽花園一丁目街區"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-02.jpg",
+          "caption": "現地比對：手持電影畫面與街道方向"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-03.jpg",
+          "caption": "現地比對：巷道與周邊建築"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-04.jpg",
+          "caption": "現地比對：電影雪景巷道對照"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-05.jpg",
+          "caption": "現地比對：巷道另一側環境"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-06.jpg",
+          "caption": "現地比對：招牌與店家外觀"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/site-07.jpg",
+          "caption": "現地比對：電影畫面中的招牌位置"
         }
       ]
     },
+    "videos": [
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/walk-01.mp4",
+          "poster": "images/nana/otaru-hanazono-izakaya-route/walk-01.jpg",
+          "caption": "現地影片：由巷口向電影場景方向拍攝"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/walk-02.mp4",
+          "poster": "images/nana/otaru-hanazono-izakaya-route/walk-02.jpg",
+          "caption": "現地影片：沿街道環境移動比對"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/walk-03.mp4",
+          "poster": "images/nana/otaru-hanazono-izakaya-route/walk-03.jpg",
+          "caption": "現地影片：周邊建築與巷道配置"
+        },
+        {
+          "src": "images/nana/otaru-hanazono-izakaya-route/walk-04.mp4",
+          "poster": "images/nana/otaru-hanazono-izakaya-route/walk-04.jpg",
+          "caption": "現地影片：招牌與電影畫面位置比對"
+        }
+      ],
     "research": {
       "status": "已確認",
       "confirmedAt": "2026-09-10",

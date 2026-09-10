@@ -129,6 +129,7 @@ function renderDetail(location) {
     <p class="detail-scene">${escapeHtml(location.scene)}</p>
     <div class="meta"><span>${escapeHtml((location.media || []).join(" / "))}</span><span>${escapeHtml(location.kind || "")}</span><span>${escapeHtml(location.address || "地址未填")}</span></div>
     <div class="comparison"><div><h3>作品畫面</h3>${reference || emptyImage("尚未提供作品畫面")}</div><div><h3>現地照片</h3>${real || emptyImage("尚未提供現地照片")}</div></div>
+    ${renderVideos(location.videos)}
     <p class="source-note">${escapeHtml(location.reference || "尚未填寫來源說明")}</p>
     ${renderResearch(location.research)}
     <div class="links">${(location.sources || []).map((source) => `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)}</a>`).join("")}</div>
@@ -151,6 +152,10 @@ function renderResearch(research) {
   const steps = (research.steps || []).map((step) => `<li><time>${escapeHtml(step.date || "")}</time><strong>${escapeHtml(step.action || "")}</strong><span>${escapeHtml(step.note || "")}</span></li>`).join("");
   const sources = (research.sources || []).map((source) => `<li><a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label || source.title || source.url)}</a>${source.note ? `<span>${escapeHtml(source.note)}</span>` : ""}</li>`).join("");
   return `<details class="research-log"><summary>查看研究脈絡${research.status ? ` · ${escapeHtml(research.status)}` : ""}</summary><p>${escapeHtml(research.summary || "")}</p>${steps ? `<h3>尋找過程</h3><ol>${steps}</ol>` : ""}${sources ? `<h3>參考資料</h3><ul>${sources}</ul>` : ""}</details>`;
+}
+function renderVideos(videos) {
+  if (!videos?.length) return "";
+  return `<section class="video-section"><h3>現地影片</h3><div class="video-list">${videos.map((video) => `<figure class="video-card"><video controls preload="metadata"${video.poster ? ` poster="${escapeAttribute(assetPath(video.poster))}"` : ""} src="${escapeAttribute(assetPath(video.src))}"></video><figcaption>${escapeHtml(video.caption || "現地影片")}</figcaption></figure>`).join("")}</div></section>`;
 }
 function select(id) { selectedId = id; const location = locations.find((item) => item.id === id); if (location) map.flyTo([location.lat, location.lng], 14, { duration: 0.5 }); render(); }
 function fillSelect(selectElement, values) { selectElement.insertAdjacentHTML("beforeend", values.map((value) => `<option value="${escapeAttribute(value)}">${escapeHtml(value)}</option>`).join("")); }
