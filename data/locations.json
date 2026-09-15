@@ -84,14 +84,18 @@
       "reference": [
         {
           "src": "images/nana/big-boy-toyoda/film-01.png",
-          "caption": "電影劇情節圖：店外 Nana 與小松奈奈相遇"
+          "caption": "電影劇情節圖：店外小松奈奈與大崎娜娜談論等待章司出來的場景"
         },
         {
           "src": "images/nana/big-boy-toyoda/film-02.png",
-          "caption": "電影劇情節圖：Big Boy 店內場景"
+          "caption": "電影劇情節圖：Big Boy 店內幸子打破玻璃杯的場景"
         }
       ],
       "real": [
+        {
+          "src": "images/nana/big-boy-toyoda/site-03.jpg",
+          "caption": "現地實拍：手持電影截圖與店面入口對照"
+        },
         {
           "src": "images/nana/big-boy-toyoda/site-01.jpg",
           "caption": "現地實拍：店內座位區與電影場景對照"
@@ -99,10 +103,6 @@
         {
           "src": "images/nana/big-boy-toyoda/site-02.jpg",
           "caption": "現地實拍：手持電影截圖與店外招牌對照"
-        },
-        {
-          "src": "images/nana/big-boy-toyoda/site-03.jpg",
-          "caption": "現地實拍：手持電影截圖與店面入口對照"
         }
       ]
     },
@@ -129,24 +129,24 @@
       }
     ],
     "research": {
-      "status": "已由電影畫面與現地素材對照",
+      "status": "已完成候選分店比對與現地特徵確認",
       "confirmedAt": "2026-09-16",
-      "summary": "OneDrive 壓縮檔內的兩張 PNG 為電影劇情節圖，分別呈現 Big Boy 店外相遇場景與店內座位區；單檔 JPG 與 Photos 壓縮檔內的照片、影片則為現地拍攝。現地影片均帶有相同 GPS 座標，據此建立本點位。",
+      "summary": "從電影畫面及片尾攝影協力名單得知，該場景位於 Big Boy 連鎖餐廳。經逐一排查設有停車場、且餐廳位於建築物一樓的分店，再以電影畫面與早期 Google 街景影像比對候選店面，最後透過停車場畫面中店門口斜坡處破損的水泥門檻這項特徵，與現地影像進行比對，判定拍攝地點為 Big Boy 豊田店。",
       "steps": [
         {
           "date": "2026-09-16",
-          "action": "整理電影畫面與現地素材",
-          "note": "將 OneDrive 內的 2 張 PNG 歸為電影畫面；將單檔 JPG 與 Photos ZIP 內的照片、影片歸為現地素材。"
+          "action": "確認餐廳品牌與候選條件",
+          "note": "從電影畫面及片尾攝影協力名單確認為 Big Boy 連鎖餐廳，並逐一排查設有停車場、且餐廳位於建築物一樓的分店。"
         },
         {
           "date": "2026-09-16",
-          "action": "電影場景對照",
-          "note": "以店外招牌、入口、停車場，以及店內窗面、燈具、座位與動線，對照電影中的劇情節圖。"
+          "action": "比對候選分店",
+          "note": "從符合條件的候選分店中，對照電影畫面與早期 Google 街景影像，逐步縮小範圍並確認數間外觀相近的店面。"
         },
         {
           "date": "2026-09-16",
-          "action": "現地 GPS 確認",
-          "note": "4 段現地影片均記錄 35.6674, 139.3772，作為網頁地圖座標；照片未保留可讀取的 EXIF 座標。"
+          "action": "現地特徵確認",
+          "note": "以電影停車場畫面中店門口斜坡處破損的水泥門檻作為關鍵判定特徵，與現地影像比對後，確認為 Big Boy 豊田店；4 段現地影片均記錄 35.6674, 139.3772，照片未保留可讀取的 EXIF 座標。"
         }
       ]
     },
