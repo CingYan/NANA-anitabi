@@ -68,6 +68,96 @@
     ]
   },
   {
+    "id": "big-boy-toyoda",
+    "title": "ビッグボーイ 豊田店",
+    "area": "東京都・日野",
+    "lat": 35.6674,
+    "lng": 139.3772,
+    "scene": "電影中 Nana 與小松奈奈在 Big Boy 餐廳相遇與交談的場景，包含店外與店內畫面。",
+    "kind": "電影實景取景地",
+    "status": "現存",
+    "media": ["電影"],
+    "reference": "電影畫面中的 Big Boy 豊田店店外入口與店內座位區，已透過現地照片與影片進行對照。",
+    "address": "東京都日野市多摩平五丁目一帶（ビッグボーイ 豊田店）",
+    "note": "4 段 2025-11-09 實拍影片的內嵌 GPS 均為 35.6674, 139.3772；單檔 JPG 與 ZIP 內 2 張照片為現地拍攝，但未保留可讀取的 EXIF 座標。",
+    "images": {
+      "reference": [
+        {
+          "src": "images/nana/big-boy-toyoda/film-01.png",
+          "caption": "電影劇情節圖：店外 Nana 與小松奈奈相遇"
+        },
+        {
+          "src": "images/nana/big-boy-toyoda/film-02.png",
+          "caption": "電影劇情節圖：Big Boy 店內場景"
+        }
+      ],
+      "real": [
+        {
+          "src": "images/nana/big-boy-toyoda/site-01.jpg",
+          "caption": "現地實拍：店內座位區與電影場景對照"
+        },
+        {
+          "src": "images/nana/big-boy-toyoda/site-02.jpg",
+          "caption": "現地實拍：手持電影截圖與店外招牌對照"
+        },
+        {
+          "src": "images/nana/big-boy-toyoda/site-03.jpg",
+          "caption": "現地實拍：手持電影截圖與店面入口對照"
+        }
+      ]
+    },
+    "videos": [
+      {
+        "src": "images/nana/big-boy-toyoda/walk-01.mp4",
+        "poster": "images/nana/big-boy-toyoda/walk-01.jpg",
+        "caption": "現地影片：Big Boy 豊田店外觀"
+      },
+      {
+        "src": "images/nana/big-boy-toyoda/walk-02.mp4",
+        "poster": "images/nana/big-boy-toyoda/walk-02.jpg",
+        "caption": "現地影片：店外入口與停車場"
+      },
+      {
+        "src": "images/nana/big-boy-toyoda/walk-03.mp4",
+        "poster": "images/nana/big-boy-toyoda/walk-03.jpg",
+        "caption": "現地影片：店面招牌與入口細節"
+      },
+      {
+        "src": "images/nana/big-boy-toyoda/walk-04.mp4",
+        "poster": "images/nana/big-boy-toyoda/walk-04.jpg",
+        "caption": "現地影片：店外環境記錄"
+      }
+    ],
+    "research": {
+      "status": "已由電影畫面與現地素材對照",
+      "confirmedAt": "2026-09-16",
+      "summary": "OneDrive 壓縮檔內的兩張 PNG 為電影劇情節圖，分別呈現 Big Boy 店外相遇場景與店內座位區；單檔 JPG 與 Photos 壓縮檔內的照片、影片則為現地拍攝。現地影片均帶有相同 GPS 座標，據此建立本點位。",
+      "steps": [
+        {
+          "date": "2026-09-16",
+          "action": "整理電影畫面與現地素材",
+          "note": "將 OneDrive 內的 2 張 PNG 歸為電影畫面；將單檔 JPG 與 Photos ZIP 內的照片、影片歸為現地素材。"
+        },
+        {
+          "date": "2026-09-16",
+          "action": "電影場景對照",
+          "note": "以店外招牌、入口、停車場，以及店內窗面、燈具、座位與動線，對照電影中的劇情節圖。"
+        },
+        {
+          "date": "2026-09-16",
+          "action": "現地 GPS 確認",
+          "note": "4 段現地影片均記錄 35.6674, 139.3772，作為網頁地圖座標；照片未保留可讀取的 EXIF 座標。"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "label": "Google Maps 座標",
+        "url": "https://www.google.com/maps/search/?api=1&query=35.6674,139.3772"
+      }
+    ]
+  },
+  {
     "id": "apartment-noboritoshinmachi",
     "title": "707 同居公寓外觀原型",
     "area": "神奈川・川崎",
