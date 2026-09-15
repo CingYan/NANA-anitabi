@@ -84,14 +84,18 @@
       "reference": [
         {
           "src": "images/nana/big-boy-toyoda/film-01.png",
-          "caption": "電影劇情節圖：店外 Nana 與小松奈奈相遇"
+          "caption": "電影劇情節圖：店外奈奈與娜娜說要等章司出來的場景"
         },
         {
           "src": "images/nana/big-boy-toyoda/film-02.png",
-          "caption": "電影劇情節圖：Big Boy 店內場景"
+          "caption": "電影劇情節圖：Big Boy 店內幸子打破玻璃杯場景"
         }
       ],
       "real": [
+        {
+          "src": "images/nana/big-boy-toyoda/site-03.jpg",
+          "caption": "現地實拍：手持電影截圖與店面入口對照"
+        },
         {
           "src": "images/nana/big-boy-toyoda/site-01.jpg",
           "caption": "現地實拍：店內座位區與電影場景對照"
@@ -99,10 +103,6 @@
         {
           "src": "images/nana/big-boy-toyoda/site-02.jpg",
           "caption": "現地實拍：手持電影截圖與店外招牌對照"
-        },
-        {
-          "src": "images/nana/big-boy-toyoda/site-03.jpg",
-          "caption": "現地實拍：手持電影截圖與店面入口對照"
         }
       ]
     },
