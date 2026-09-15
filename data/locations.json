@@ -71,15 +71,45 @@
     "id": "apartment-noboritoshinmachi",
     "title": "707 同居公寓外觀原型",
     "area": "神奈川・川崎",
-    "lat": 35.6245657,
-    "lng": 139.5635201,
+    "lat": 35.6255,
+    "lng": 139.5661,
     "scene": "全國ロケ地ガイド把哈七與 Nana 同居的公寓外觀定位在登戶新町一帶。",
     "kind": "電影實景取景地",
     "status": "現存",
     "media": ["電影"],
     "reference": "這筆是電影版外景定位，不是抽象 mood 地圖。",
     "address": "神奈川縣川崎市多摩區登戶新町一帶",
-    "note": "來源只給到街區與公寓，沒有門牌；因此地圖先落在街區中心。",
+    "note": "來源只給到街區與公寓，沒有門牌。已依 2025-11-09 實拍影片內嵌 GPS（35.6255, 139.5661）修正地圖位置；兩段影片的 GPS 一致，兩張照片為同次現地拍攝但未保留 EXIF 座標。",
+    "images": {
+      "reference": [
+        {
+          "src": "images/nana/apartment-noboritoshinmachi/film-01.png",
+          "caption": "電影畫面：707 公寓外觀原型"
+        }
+      ],
+      "real": [
+        {
+          "src": "images/nana/apartment-noboritoshinmachi/site-01.jpg",
+          "caption": "現地實拍：手持電影截圖與現場建築對照"
+        },
+        {
+          "src": "images/nana/apartment-noboritoshinmachi/site-02.jpg",
+          "caption": "現地實拍：707 公寓外觀與周邊環境"
+        }
+      ]
+    },
+    "videos": [
+      {
+        "src": "images/nana/apartment-noboritoshinmachi/walk-01.mp4",
+        "poster": "images/nana/apartment-noboritoshinmachi/walk-01.jpg",
+        "caption": "現地影片：手持電影截圖與現場建築同框比對"
+      },
+      {
+        "src": "images/nana/apartment-noboritoshinmachi/walk-02.mp4",
+        "poster": "images/nana/apartment-noboritoshinmachi/walk-02.jpg",
+        "caption": "現地影片：707 公寓外觀與周邊道路"
+      }
+    ],
     "sources": [
       {
         "label": "全國ロケ地ガイド NANA",
